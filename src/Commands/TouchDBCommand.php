@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace SaaberDev\TouchDB\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class TouchDBCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'touch-db';
 
     public $description = 'My command';
 
