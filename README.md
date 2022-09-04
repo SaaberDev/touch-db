@@ -4,7 +4,7 @@
 # A small package to interact with database schema.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/saaberdev/touch-db.svg?style=flat-square)](https://packagist.org/packages/saaberdev/touch-db)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/saaberdev/touch-db/run-tests?label=tests)](https://github.com/saaberdev/touch-db/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Tests Action Status](https://github.com/SaaberDev/touch-db/actions/workflows/run-tests.yml/badge.svg)](https://github.com/SaaberDev/touch-db/actions/workflows/run-tests.yml)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/saaberdev/touch-db/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/saaberdev/touch-db/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/saaberdev/touch-db.svg?style=flat-square)](https://packagist.org/packages/saaberdev/touch-db)
 
