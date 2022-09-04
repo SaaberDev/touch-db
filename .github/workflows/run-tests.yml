@@ -54,14 +54,7 @@ jobs:
 
       - name: Create Database
         run: |
-          mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS testing_touch_db;"
-
-      env:
-        DB_CONNECTION: mysql
-        DB_PORT: 3306
-        DB_USER: root
-        DB_PASSWORD: ""
-        DB_DATABASE: testing_touch_db
+          mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS testing_touch_db"
 
       - name: Execute tests
         run: vendor/bin/pest
