@@ -2,6 +2,6 @@
 
 namespace SaaberDev\TouchDB\Services;
 
-    class Date
-    {
-    }
+class Date
+{
+}
