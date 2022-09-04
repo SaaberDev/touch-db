@@ -1,15 +1,16 @@
 <?php
 
+    use Illuminate\Support\Collection;
     use SaaberDev\TouchDB\Facades\TouchDB;
 
     it('can get all as collection from database schema', function () {
         $getTableList = TouchDB::query()->get();
-        expect($getTableList)->toBeCollection();
+        expect($getTableList)->toBeInstanceOf(Collection::class);
     });
 
     it('can get specific data from database schema as collection', function () {
         $select = TouchDB::query()->select(['table_name', 'column_name'])->get();
-        expect($select)->toBeCollection();
+        expect($select)->toBeInstanceOf(Collection::class);
     });
 
     it('can select table_name, column_name', function () {
