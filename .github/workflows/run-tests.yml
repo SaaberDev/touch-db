@@ -39,6 +39,9 @@ jobs:
           mysql user: 'developer'
           mysql password: 'root'
 
+          - name: Create DB
+              run: mysql -uroot -proot -e "CREATE DATABASE testing_touch_db;"K
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
