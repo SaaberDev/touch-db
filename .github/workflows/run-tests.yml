@@ -35,7 +35,7 @@ jobs:
           collation server: 'utf8_general_ci'
           mysql version: '5.7'
           mysql database: 'testing_touch_db'
-          mysql root password: ''
+          mysql root password: 'root'
           mysql user: 'developer'
           mysql password: 'root'
 
