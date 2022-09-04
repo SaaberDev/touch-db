@@ -17,8 +17,9 @@
     ],
     "require": {
         "php": ">=8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "doctrine/dbal": "^3.4",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -30,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SaaberDev\\TouchDB\\": "src",
-            "SaaberDev\\TouchDB\\Database\\Factories\\": "database/factories"
+            "SaaberDev\\TouchDB\\": "src"
         }
     },
     "autoload-dev": {

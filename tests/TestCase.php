@@ -3,18 +3,18 @@
 namespace SaaberDev\TouchDB\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 use SaaberDev\TouchDB\TouchDBServiceProvider;
 
 class TestCase extends Orchestra
 {
+//    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'SaaberDev\\TouchDB\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
@@ -26,11 +26,12 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        config()->set('database.default', 'mysql');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_touch-db_table.php.stub';
+
+        Schema::dropIfExists('users');
+        $migration = include __DIR__.'/../database/migrations/2014_10_12_000000_create_users_table.php.stub';
         $migration->up();
-        */
+
     }
 }

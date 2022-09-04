@@ -4,7 +4,6 @@ namespace SaaberDev\TouchDB;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use SaaberDev\TouchDB\Commands\TouchDBCommand;
 
 class TouchDBServiceProvider extends PackageServiceProvider
 {
@@ -17,10 +16,15 @@ class TouchDBServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('touch-db')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_touch-db_table')
-            ->hasAssets()
-            ->hasCommand(TouchDBCommand::class);
+        ;
+
+        $this->registerFacades();
+    }
+
+    protected function registerFacades()
+    {
+        $this->app->bind('touchdb', function () {
+            return new \SaaberDev\TouchDB\TouchDB;
+        });
     }
 }
