@@ -1,6 +1,6 @@
 <?php
 
-    namespace SaaberDev\TouchDB;
+namespace SaaberDev\TouchDB;
 
     use SaaberDev\TouchDB\Services\Query;
 
@@ -10,7 +10,6 @@
         {
             return new Query();
         }
-
 
 //        public string $database_name;
 //        private Collection $collection;

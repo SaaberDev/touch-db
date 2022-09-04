@@ -1,9 +1,8 @@
 <?php
 
-    namespace SaaberDev\TouchDB\Services;
+namespace SaaberDev\TouchDB\Services;
 
     use Illuminate\Support\Collection;
-    use SaaberDev\TouchDB\Core\TouchDBCollection;
 
     class Column
     {
