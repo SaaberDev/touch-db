@@ -1,6 +1,6 @@
 <?php
 
-    namespace SaaberDev\TouchDB\Services;
+namespace SaaberDev\TouchDB\Services;
 
     use Illuminate\Support\Collection;
     use Illuminate\Support\Facades\DB;
@@ -9,7 +9,9 @@
     class Query extends InteractWithDB
     {
         protected array $query;
+
         protected string $select;
+
         protected static array $defaultSelect = [
             'TABLE_SCHEMA',
             'TABLE_NAME',
@@ -23,7 +25,7 @@
             'COLLATION_NAME',
             'COLUMN_TYPE',
             'COLUMN_KEY',
-            'EXTRA'
+            'EXTRA',
         ];
 
         public function __construct()
@@ -32,7 +34,7 @@
         }
 
         /**
-         * @param array $array
+         * @param  array  $array
          * @return SelectQuery
          */
         public function select(array $array): SelectQuery
@@ -47,8 +49,9 @@
         {
             $prepare = (new SelectQuery(static::$defaultSelect))->prepareSelect();
             $this->select = $prepare::$statement;
+
             return new Collection(array_map(function ($query) {
-                return (array)$query;
+                return (array) $query;
             }, $this->runQuery($this->select)));
         }
 
@@ -60,6 +63,7 @@
         {
             $sql = "SELECT {$select} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = :database";
             $this->query = DB::select($sql, [$this->database_name]);
+
             return $this->query;
         }
     }

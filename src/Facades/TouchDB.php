@@ -1,6 +1,6 @@
 <?php
 
-    namespace SaaberDev\TouchDB\Facades;
+namespace SaaberDev\TouchDB\Facades;
 
     use Illuminate\Support\Facades\Facade;
 

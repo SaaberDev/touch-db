@@ -1,8 +1,7 @@
 <?php
 
-    namespace SaaberDev\TouchDB\Services;
+namespace SaaberDev\TouchDB\Services;
 
     class Date
     {
-
     }

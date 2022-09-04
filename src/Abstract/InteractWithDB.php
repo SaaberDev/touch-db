@@ -1,8 +1,7 @@
 <?php
 
-    namespace SaaberDev\TouchDB\Abstract;
+namespace SaaberDev\TouchDB\Abstract;
 
-    use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Schema;
 
     abstract class InteractWithDB

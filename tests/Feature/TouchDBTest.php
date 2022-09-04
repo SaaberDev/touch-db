@@ -15,7 +15,7 @@
     it('can select table_name, column_name', function () {
         $instance = TouchDB::query();
         foreach ($instance->select(['table_name', 'column_name'])->get() as $item) {
-            $this->assertArrayHasKey('table_name', (array)$item);
-            $this->assertArrayHasKey('column_name', (array)$item);
+            $this->assertArrayHasKey('table_name', (array) $item);
+            $this->assertArrayHasKey('column_name', (array) $item);
         }
     });

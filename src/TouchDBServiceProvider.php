@@ -15,8 +15,7 @@ class TouchDBServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('touch-db')
-        ;
+            ->name('touch-db');
 
         $this->registerFacades();
     }
