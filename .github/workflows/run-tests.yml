@@ -34,7 +34,7 @@ jobs:
           mysql version: '5.7'
           mysql database: 'testing_touch_db'
           mysql root password: 'root'
-            - run: mysql --port 3306 -u root -h 127.0.0.1 -e 'CREATE DATABASE IF NOT EXISTS test;'
+      - run: mysql --port 3306 -u root -h 127.0.0.1 -e 'CREATE DATABASE IF NOT EXISTS test;'
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
