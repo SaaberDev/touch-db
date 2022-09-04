@@ -30,15 +30,9 @@ jobs:
         uses: mirromutth/mysql-action@v1.1
         with:
           host port: 3306
-          container port: 3307
-          character set server: 'utf8'
-          collation server: 'utf8_general_ci'
           mysql version: '5.7'
           mysql database: 'testing_touch_db'
           mysql root password: 'root'
-          mysql user: 'developer'
-          mysql password: 'root'
-      - run: mysql -uroot -proot -e "CREATE DATABASE testing_touch_db;"
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
