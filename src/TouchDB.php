@@ -2,14 +2,14 @@
 
 namespace SaaberDev\TouchDB;
 
-    use SaaberDev\TouchDB\Services\Query;
+use SaaberDev\TouchDB\Services\Query;
 
-    class TouchDB
+class TouchDB
+{
+    public function query()
     {
-        public function query()
-        {
-            return new Query();
-        }
+        return new Query();
+    }
 
 //        public string $database_name;
 //        private Collection $collection;
@@ -72,4 +72,4 @@ namespace SaaberDev\TouchDB;
 //                return $item->type == 'date' || $item->type == 'datetime' || $item->type == 'timestamp';
 //            })->unique('column_name')->values();
 //        }
-    }
+}

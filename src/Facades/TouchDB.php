@@ -2,18 +2,18 @@
 
 namespace SaaberDev\TouchDB\Facades;
 
-    use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade;
 
+/**
+ * @mixin \SaaberDev\TouchDB\TouchDB
+ */
+class TouchDB extends Facade
+{
     /**
-     * @mixin \SaaberDev\TouchDB\TouchDB
+     * @return string
      */
-    class TouchDB extends Facade
+    protected static function getFacadeAccessor(): string
     {
-        /**
-         * @return string
-         */
-        protected static function getFacadeAccessor(): string
-        {
-            return 'touchdb';
-        }
+        return 'touchdb';
     }
+}

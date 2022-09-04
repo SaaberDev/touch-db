@@ -2,29 +2,29 @@
 
 namespace SaaberDev\TouchDB\Services;
 
-    use Illuminate\Support\Collection;
+use Illuminate\Support\Collection;
 
-    class Table extends Query
+class Table extends Query
+{
+    public $table;
+
+    /**
+     * @return Query
+     */
+    protected static function initialize(): Query
     {
-        public $table;
-
-        /**
-         * @return Query
-         */
-        protected static function initialize(): Query
-        {
-            return new Query();
-        }
-
-        /**
-         * @return Collection
-         */
-        public function all(): Collection
-        {
-            foreach ($this->initialize() as $item) {
-                $this->collection->push($item);
-            }
-
-            return $this->collection;
-        }
+        return new Query();
     }
+
+    /**
+     * @return Collection
+     */
+    public function all(): Collection
+    {
+        foreach ($this->initialize() as $item) {
+            $this->collection->push($item);
+        }
+
+        return $this->collection;
+    }
+}
