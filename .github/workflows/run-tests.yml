@@ -22,18 +22,13 @@ jobs:
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_DATABASE: testing_touch_db
-        ports:
-          - 3306
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: '5.7'
+            - run: mysql -uroot -h127.0.0.1 -e 'SELECT version()'
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
