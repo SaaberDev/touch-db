@@ -5,7 +5,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/saaberdev/touch-db.svg?style=flat-square)](https://packagist.org/packages/saaberdev/touch-db)
 [![GitHub Tests Action Status](https://github.com/SaaberDev/touch-db/actions/workflows/run-tests.yml/badge.svg)](https://github.com/SaaberDev/touch-db/actions/workflows/run-tests.yml)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/saaberdev/touch-db/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/saaberdev/touch-db/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://github.com/SaaberDev/touch-db/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/SaaberDev/touch-db/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/saaberdev/touch-db.svg?style=flat-square)](https://packagist.org/packages/saaberdev/touch-db)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
