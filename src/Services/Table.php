@@ -4,7 +4,7 @@
 
     use Illuminate\Support\Collection;
 
-    class Table
+    class Table extends Query
     {
         public $table;
 
