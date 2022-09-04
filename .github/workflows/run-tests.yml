@@ -22,19 +22,22 @@ jobs:
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
+    services:
+      mysql:
+        image: mysql:8.0.21
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: testing_touch_db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setting Up MySQL
-        uses: mirromutth/mysql-action@v1.1
-        with:
-          host port: 3306
-          container port: 3306
-          mysql version: '5.7'
-          mysql database: 'testing_touch_db'
-          mysql root password: 'root'
-      - run: mysql --port 3306 -u root -h 127.0.0.1 -e 'CREATE DATABASE IF NOT EXISTS test;'
+      - name: Create 2nd Database
+        run: mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS testing_touch_db;"
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -52,6 +55,13 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      env:
+        DB_CONNECTION: mysql
+        DB_PORT: 3306
+        DB_USER: root
+        DB_PASSWORD: ""
+        DB_DATABASE: testing_touch_db
 
       - name: Execute tests
         run: vendor/bin/pest
