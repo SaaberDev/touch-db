@@ -4,27 +4,26 @@ namespace SaaberDev\TouchDB\Services;
 
 use Illuminate\Support\Collection;
 
-class Table extends Query
+class Table
 {
-    public $table;
+    protected static InitQuery $initQuery;
+    protected static Collection $list;
 
-    /**
-     * @return Query
-     */
-    protected static function initialize(): Query
+    public function __construct($initQuery)
     {
-        return new Query();
+        static::$initQuery = $initQuery;
+        static::$list = $initQuery->get()->pluck('table_name')->unique()->values();
     }
 
-    /**
-     * @return Collection
-     */
-    public function all(): Collection
+    public function exclude($values): Table
     {
-        foreach ($this->initialize() as $item) {
-            $this->collection->push($item);
-        }
+        static::$list = static::$list->flip()->except($values)->flip()->values();
 
-        return $this->collection;
+        return $this;
+    }
+
+    public function get(): Collection
+    {
+        return static::$list;
     }
 }

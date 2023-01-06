@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 abstract class InteractWithDB
 {
-    protected string $database_name;
+    protected static string $database_name;
 
     public function __construct()
     {
-        $this->database_name = Schema::getConnection()->getDatabaseName();
+        static::$database_name = Schema::getConnection()->getDatabaseName();
     }
 
     /**
@@ -18,6 +18,11 @@ abstract class InteractWithDB
      */
     public function getDatabaseName(): string
     {
-        return $this->database_name;
+        return static::$database_name;
+    }
+
+    public static function getSql($select): string
+    {
+        return "SELECT {$select} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = :database";
     }
 }

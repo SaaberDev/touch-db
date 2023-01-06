@@ -9,11 +9,11 @@ class Column
     public $column;
 
     /**
-     * @return Query
+     * @return InitQuery
      */
-    protected static function initialize(): Query
+    protected static function initialize(): InitQuery
     {
-        return new Query();
+        return new InitQuery();
     }
 
     /**

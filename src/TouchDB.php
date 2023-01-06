@@ -2,13 +2,13 @@
 
 namespace SaaberDev\TouchDB;
 
-use SaaberDev\TouchDB\Services\Query;
+use SaaberDev\TouchDB\Services\InitQuery;
 
 class TouchDB
 {
-    public function query()
+    public function init(): InitQuery
     {
-        return new Query();
+        return new InitQuery();
     }
 
 //        public string $database_name;
