@@ -42,9 +42,9 @@ class InitQuery extends InteractWithDB
         }
     }
 
-    public function schemaInstance(): SchemaQuery
+    public function columnInstance(): Column
     {
-        return new SchemaQuery();
+        return new Column();
     }
 
     public function tableInstance(): Table

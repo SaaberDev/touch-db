@@ -2,29 +2,10 @@
 
 namespace SaaberDev\TouchDB\Services;
 
-use Illuminate\Support\Collection;
-
-class Column
+class Column extends InitQuery
 {
-    public $column;
-
-    /**
-     * @return InitQuery
-     */
-    protected static function initialize(): InitQuery
+    public function select(array $array): InitQuery
     {
-        return new InitQuery();
-    }
-
-    /**
-     * @return Collection
-     */
-    public function all(): Collection
-    {
-        foreach ($this->initialize() as $item) {
-            $this->collection->push($item);
-        }
-
-        return $this->collection;
+        return (new static($array))->prepareQuery();
     }
 }
