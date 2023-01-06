@@ -9,9 +9,13 @@ use SaaberDev\TouchDB\Abstract\InteractWithDB;
 class InitQuery extends InteractWithDB
 {
     protected static array $query;
+
     protected static array $array;
+
     protected static string $queryStatement;
+
     public static string $prepareStatement = '';
+
     protected static array $defaultSelect = [
         'TABLE_SCHEMA',
         'TABLE_NAME',
@@ -31,7 +35,7 @@ class InitQuery extends InteractWithDB
     public function __construct($selectColumns = [])
     {
         parent::__construct();
-        if (!empty($selectColumns)) {
+        if (! empty($selectColumns)) {
             static::$array = $selectColumns;
         } else {
             static::$array = static::$defaultSelect;

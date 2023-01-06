@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 class Table
 {
     protected static InitQuery $initQuery;
+
     protected static Collection $list;
 
     public function __construct($initQuery)

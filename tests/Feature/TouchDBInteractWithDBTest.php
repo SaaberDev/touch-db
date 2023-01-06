@@ -1,6 +1,5 @@
 <?php
 
-    use Illuminate\Support\Collection;
     use SaaberDev\TouchDB\Facades\TouchDB;
 
     uses()->group('interact-with-db');
